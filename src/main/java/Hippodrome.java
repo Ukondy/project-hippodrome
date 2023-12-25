@@ -1,3 +1,5 @@
+import lombok.Getter;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -29,6 +31,6 @@ public class Hippodrome {
     public Horse getWinner() {
         return horses.stream()
                 .max(Comparator.comparing(Horse::getDistance))
-                .get();
+                .orElseThrow();
     }
 }
