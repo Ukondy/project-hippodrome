@@ -50,7 +50,7 @@ class HippodromeTest {
         var horses = IntStream.range(0,50).mapToObj(i -> Mockito.mock(Horse.class)).toList();
         new Hippodrome(horses).move();
 
-        horses.forEach(horse -> Mockito.verify(horse, Mockito.times(2)).move());
+        horses.forEach(horse -> Mockito.verify(horse, Mockito.times(1)).move());
     }
 
     @Test
